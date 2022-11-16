@@ -1,0 +1,27 @@
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --hue-neutral: 200;
+    --hue-wrong: 0;
+    --hue-correct: 145;
+  }
+.quizContainer {
+padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+    color:red;
+}
+
+.hidden {
+    display: none;
+}
