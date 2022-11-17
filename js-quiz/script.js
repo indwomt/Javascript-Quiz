@@ -1,50 +1,54 @@
 var startButtonEl = document.getElementById("startButton")
 var questionBoxEl = document.getElementById("questionBox")
 var answerButtonEl = document.getElementById("answerButtons")
-var question = document.getElementById('question')
+var questionElement = document.getElementById('question')
+var nextButton = document.getElementById('nextButton')
+var timer = document.getElementById('timer')
 var shuffledQuestions
+var currentQuestionIndex
+var secondsLeft = 10
 
 startButtonEl.addEventListener("click", startQuiz) 
 
 
+// starting the quiz and Populating the question box
+
 function startQuiz() {
 startButtonEl.classList.add('hidden');
 questionBoxEl.classList.remove('hidden');
-shuffledQuestions = questions[0].question
-question.textContent = shuffledQuestions
+nextButton.classList.remove('hidden');
+timer.classList.remove('hidden')
+startTimer()
+// setNextQuestion()
 }
 
-const questions = [
-    {
-      question: 'What is 2 + 2?',
-      answers: [
-        { text: '4', correct: true },
-        { text: '22', correct: false }
-      ]
-    },
-    {
-      question: 'Who is the best YouTuber?',
-      answers: [
-        { text: 'Web Dev Simplified', correct: true },
-        { text: 'Traversy Media', correct: true },
-        { text: 'Dev Ed', correct: true },
-        { text: 'Fun Fun Function', correct: true }
-      ]
-    },
-    {
-      question: 'Is web development fun?',
-      answers: [
-        { text: 'Kinda', correct: false },
-        { text: 'YES!!!', correct: true },
-        { text: 'Um no', correct: false },
-        { text: 'IDK', correct: false }
-      ]
-    },
-    {
-      question: 'What is 4 * 2?',
-      answers: [
-        { text: '6', correct: false },
-        { text: '8', correct: true }
-      ]
-    }
-  ]
+
+// Timer in navbar
+
+function startTimer () {
+  var timeInterval = setInterval(function() {
+    secondsLeft-- 
+  timer.textContent = secondsLeft
+  
+  if(secondsLeft === 0) {
+    clearInterval(timeInterval);
+    timer.textContent = "Time's up!"
+  }
+}, 1000)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
