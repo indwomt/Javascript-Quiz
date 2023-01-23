@@ -25,3 +25,20 @@ button {
 .hidden {
   display: none;
 }
+
+#choices li {
+  list-style: none;
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* #input-hidden {
+  display: none;
+} */
+
